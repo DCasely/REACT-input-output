@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import Header from './Header/Header';
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 
 const App = () => {
-  const [updateUser, setUpdateUser] = useState('dcasely');
+  const [updateUser, setUpdateUser] = useState({
+    username: 'dcasely',
+    firstName: 'Davin',
+    lastName: 'Casely',
+    email: 'davin@davincasely.com',
+  });
+
+  const updateFields = () => {};
 
   const changeUser = (e) => {
     console.log(e.target);
@@ -12,8 +20,22 @@ const App = () => {
 
   return (
     <div>
-      <UserInput updateUser={changeUser} userName={updateUser} />
-      <UserOutput username={updateUser} text="This is Paragraph for User1" />
+      <Header />
+      <UserInput
+        updateUser={changeUser}
+        updateField={updateFields}
+        userName={updateUser.username}
+        firstName={updateUser.firstName}
+        lastName={updateUser.lastName}
+        email={updateUser.email}
+      />
+      <UserOutput
+        username={updateUser.username}
+        firstName={updateUser.firstName}
+        lastName={updateUser.lastName}
+        email={updateUser.email}
+        text="This is Paragraph for User1"
+      />
     </div>
   );
 };

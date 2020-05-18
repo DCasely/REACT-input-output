@@ -1,16 +1,13 @@
 import React from 'react';
+import './UserOutput.css';
 
 const UserOutput = (props) => {
-  const styleOutput = {
-    textAlign: 'center',
-    color: 'red',
-    fontSize: '2rem',
-  };
-
   return (
-    <div style={styleOutput}>
+    <div className="output">
       <p>Username: {props.username}</p>
-      <p>{props.text}</p>
+      <p>First Name: {props.firstName}</p>
+      <p>Last Name: {props.lastName}</p>
+      <p>Email Name: {props.email}</p>
     </div>
   );
 };
