@@ -1,0 +1,16 @@
+.UserInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.UserInput .input-username {
+  margin: 1rem;
+  border: 1px solid green;
+}
+
+.UserInput .submit-btn {
+  background-color: green;
+  color: white;
+}
