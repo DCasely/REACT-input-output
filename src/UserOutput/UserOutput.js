@@ -4,10 +4,18 @@ import './UserOutput.css';
 const UserOutput = (props) => {
   return (
     <div className="output">
-      <p>Username: {props.username}</p>
-      <p>First Name: {props.firstName}</p>
-      <p>Last Name: {props.lastName}</p>
-      <p>Email Name: {props.email}</p>
+      <p>
+        Username: <span>{props.username}</span>
+      </p>
+      <p>
+        First Name: <span>{props.firstName}</span>
+      </p>
+      <p>
+        Last Name: <span>{props.lastName}</span>
+      </p>
+      <p>
+        Email: <span>{props.email}</span>
+      </p>
     </div>
   );
 };

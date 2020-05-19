@@ -1,5 +1,19 @@
 .output {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.25rem;
+  text-align: center;
   color: white;
-  width: 25%;
-  margin: 5rem auto;
+  width: 20rem;
+  margin: 2.5rem auto;
+}
+
+.output span {
+  display: inline-block;
+  min-width: 15rem;
+  margin-top: 0.5rem;
+  background-color: rgba(0, 128, 0, 0.5);
+  border: 1px solid #fff;
+  box-shadow: 1px 1px 1px #fff;
+  padding: 0 1rem;
+  font-family: cursive;
 }

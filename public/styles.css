@@ -1,5 +1,9 @@
 body {
   background-image: url(./images/darkstreet.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   font-family: sans-serif;
   color: #fff;
