@@ -4,7 +4,7 @@ import './UserInput.css';
 const UserInput = (props) => {
   return (
     <div>
-      <form onSubmit={props.updateUser} className="UserInput">
+      <form className="UserInput">
         <label htmlFor="username">Username: </label>
         <input
           onChange={props.updateField}
@@ -14,18 +14,18 @@ const UserInput = (props) => {
           value={props.userName}
         />
 
-        <label htmlFor="firstname">First Name: </label>
+        <label htmlFor="firstName">First Name: </label>
         <input
           onChange={props.updateField}
-          name="firstname"
+          name="firstName"
           type="text"
           value={props.firstName}
         />
 
-        <label htmlFor="lastname">Last Name: </label>
+        <label htmlFor="lastName">Last Name: </label>
         <input
           onChange={props.updateField}
-          name="lastname"
+          name="lastName"
           type="text"
           value={props.lastName}
         />
@@ -38,8 +38,10 @@ const UserInput = (props) => {
           value={props.email}
         />
 
-        <button>Submit</button>
-        <button>RESET</button>
+        <button onClick={props.updateUser} type="button">
+          Submit
+        </button>
+        <button onClick={props.reset}>RESET</button>
       </form>
     </div>
   );

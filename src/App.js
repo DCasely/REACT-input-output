@@ -4,18 +4,37 @@ import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 
 const App = () => {
-  const [updateUser, setUpdateUser] = useState({
+  const [user, setUser] = useState({
     username: 'dcasely',
     firstName: 'Davin',
     lastName: 'Casely',
     email: 'davin@davincasely.com',
   });
 
-  const updateFields = () => {};
+  const [currentAccount, setCurrentAccount] = useState(user);
+
+  const updateFields = (e) => {
+    const { name, value } = e.target;
+
+    setUser((prevUser) => {
+      return {
+        ...prevUser,
+        [name]: value,
+      };
+    });
+  };
 
   const changeUser = (e) => {
-    console.log(e.target);
-    setUpdateUser(e.target.value);
+    setCurrentAccount(user);
+    e.preventDefault();
+  };
+
+  const resetFields = (e) => {
+    setUser({ username: '', firstName: '', lastName: '', email: '' });
+
+    setCurrentAccount('');
+
+    e.preventDefault();
   };
 
   return (
@@ -24,17 +43,17 @@ const App = () => {
       <UserInput
         updateUser={changeUser}
         updateField={updateFields}
-        userName={updateUser.username}
-        firstName={updateUser.firstName}
-        lastName={updateUser.lastName}
-        email={updateUser.email}
+        reset={resetFields}
+        userName={user.username}
+        firstName={user.firstName}
+        lastName={user.lastName}
+        email={user.email}
       />
       <UserOutput
-        username={updateUser.username}
-        firstName={updateUser.firstName}
-        lastName={updateUser.lastName}
-        email={updateUser.email}
-        text="This is Paragraph for User1"
+        username={currentAccount.username}
+        firstName={currentAccount.firstName}
+        lastName={currentAccount.lastName}
+        email={currentAccount.email}
       />
     </div>
   );
